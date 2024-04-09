@@ -1,0 +1,30 @@
+<mat-card
+  class="w-75 m-auto h-50 d-flex justify-content-center align-items-center"
+>
+  <mat-form-field>
+    <input
+      matInput
+      type="text"
+      [(ngModel)]="enteredTitle"
+      placeholder="enter the title here"
+    />
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <textarea
+      matInput
+      class="w-75 d-flex justify-content-center m-auto rounded-1 shadow-lg border-0"
+      placeholder="Enter Post Here"
+      minlength="3"
+      maxlength="255"
+      required="true"
+      rows="6"
+      [(ngModel)]="enteredContent"
+    >
+    </textarea>
+  </mat-form-field>
+</mat-card>
+<div class="d-flex justify-content-center mt-3">
+  <button mat-raised-button class="btn btn-info" (click)="onAddPost()">
+    Save Post
+  </button>
+</div>
