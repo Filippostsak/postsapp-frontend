@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
@@ -12,6 +13,7 @@ import { PostCreateComponent } from './components/post-create/post-create.compon
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HeaderComponent } from './components/header/header.component';
 import { PostListComponent } from './components/post-list/post-list.component';
+import { PostService } from './services/posts.service';
 
 @NgModule({
   declarations: [
@@ -28,8 +30,9 @@ import { PostListComponent } from './components/post-list/post-list.component';
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
+    BrowserAnimationsModule,
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [provideAnimationsAsync(), PostService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
